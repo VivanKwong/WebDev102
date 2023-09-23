@@ -27,7 +27,7 @@ The following **additional** features are implemented:
 
 Here's a walkthrough of implemented required features:
 
-<img src='[p1-communityBoard/ezgif.com-video-to-gif.gif](https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExOTN4ZHptYXc2NHIybnVhOGczdTU5NjM4Z3E1b2J0ZmlidXluMTRociZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/jo8997cx25vWGFvxWE/giphy.gif)' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+<img src='https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExOTN4ZHptYXc2NHIybnVhOGczdTU5NjM4Z3E1b2J0ZmlidXluMTRociZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/jo8997cx25vWGFvxWE/giphy.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
 <!-- Replace this with whatever GIF tool you used! -->
 GIF created with Kap  
