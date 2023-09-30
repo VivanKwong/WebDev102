@@ -18,6 +18,7 @@ const App = () => {
 
   const [currentCardIndex, setCurrentCardIndex] = useState(0);
   const [cardOrder, setCardOrder] = useState([]);
+  const [showAnswer, setShowAnswer] = useState(false);
   const currentCard = cardSet[currentCardIndex];
 
   useEffect(() => {
@@ -28,11 +29,13 @@ const App = () => {
   }, [cardSet, cardOrder]);
 
   const handlePrevCard = () => {
+    setShowAnswer(false);
     const prevIndex = (currentCardIndex - 1 + cardSet.length) % cardSet.length;
     setCurrentCardIndex(prevIndex)
   };
 
   const handleNextCard = () => {
+    setShowAnswer(false);
     const nextIndex = (currentCardIndex + 1) % cardSet.length;
     setCurrentCardIndex(nextIndex);
   };

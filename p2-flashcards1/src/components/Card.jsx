@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 const Card = ({ question, answer }) => {
   const [showAnswer, setShowAnswer] = useState(false);
@@ -6,6 +6,10 @@ const Card = ({ question, answer }) => {
   const handleCardClick = () => {
     setShowAnswer(!showAnswer);
   };
+
+  useEffect(() => {
+    setShowAnswer(false); 
+  }, [question, answer]);
 
   return (
     <div className='card' onClick={handleCardClick}>
