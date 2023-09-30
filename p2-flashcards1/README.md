@@ -4,7 +4,7 @@ Submitted by: Vivian Kwong
 
 This web app: Has 10 flashcards in random order to test your knowledge about cats. Click on the flashcard to see answers to the questions and the arrow buttons to see previous and next flashcards. Refresh the page to have the order of flashcards randomized again.
 
-Time spent: 7 hours spent in total
+Time spent: 8 hours spent in total
 
 ## Required Features
 
