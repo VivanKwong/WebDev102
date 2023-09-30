@@ -1,0 +1,9 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+  background-image: url('https://www.fernvet.co.za/wp-content/uploads/2018/02/Cat-White-Background-Images.jpg');
+  background-size: cover;
+  background-position: center;
+}

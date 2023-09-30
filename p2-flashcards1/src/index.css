@@ -1,0 +1,83 @@
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+}
+
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 1000;
+  font-family: inherit;
+  background-color: #f7f3f3;
+  border-color: slategray;
+  cursor: pointer;
+  transition: border-color 0.25s;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+button:hover {
+  border-color: #458371;
+}
+button:focus,
+button:focus-visible {
+  outline: 6px auto -webkit-focus-ring-color;
+}
+
+.card {
+  width: 35vw;
+  height: 45vh;
+  border: 2px solid #a6a4a4;
+  border-radius: 5px;
+  perspective: 1000px;
+  cursor: pointer;
+  margin: 30px auto;
+  background-color: white;
+}
+
+.card:hover {
+  border: 2px solid #458371;
+}
+
+.card .question,
+.card .answer {
+  position: absolute;
+  width: 20vw;
+  height: 10vh;
+  backface-visibility: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  font-weight: bold;
+  text-align: center; 
+  left: 4.5vw;
+}
+
+.card-content {
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+}
+
+.card .question {
+  top: 30%;
+  left: 3.75vw;
+}
+
+.card .answer {
+  color: rgb(4, 3, 3);
+  transform: rotateX(180deg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  font-weight: bold;
+  text-align: center;
+  top: 50%;
+  left: 3.75vw;
+}
+
+.card-content.flipped {
+  transform: rotateX(180deg);
+}
