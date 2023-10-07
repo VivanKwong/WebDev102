@@ -1,41 +1,39 @@
-# Web Development Project 2 - Cat Facts
+# Web Development Project 3 - Cat Facts
 
 Submitted by: Vivian Kwong
 
-This web app: Has 10 flashcards in random order to test your knowledge about cats. Click on the flashcard to see answers to the questions and the arrow buttons to see previous and next flashcards. Refresh the page to have the order of flashcards randomized again.
+This web app: Has 10 flashcards to test your knowledge about cats. Click on the flashcard to see answers to the questions. A back button displayed on the card can be used to return to the previous card in a set sequence, and a next button displayed on the card can be used to navigate to the next card in a set sequenceThe user can enter their guess in a box before seeing the flipside of the card, and clicking on a submit button shows visual feedback about whether the answer was correct or incorrect. A shuffle button can be used to randomize the order of the cards.
 
-Time spent: 8 hours spent in total
+Time spent: 7 hours spent in total
 
 ## Required Features
 
 The following **required** functionality is completed:
 
-- [x] **The title of the card set and some information about it, such as a short description and the total number of cards are displayed**
-- [x] **A single card at a time is displayed, only showing one of the components of the information pair**
-- [x] **A list of card pairs is created**
-- [x] **Clicking on the card shows the corresponding component of the information pair**
-- [x] **Clicking the next button displays a random new card**
+- [X] **The user can enter their guess in a box before seeing the flipside of the card**
+- [X] **Clicking on a submit button shows visual feedback about whether the answer was correct or incorrect**
+- [X] **A back button is displayed on the card and can be used to return to the previous card in a set sequence**
+- [X] **A next button is displayed on the card and can be used to navigate to the next card in a set sequence**
 
 The following **optional** features are implemented:
 
-- [ ] Cards contains images in addition to or in place of text
-- [ ] Cards have different visual styles such as color based on their category
-  - [ ] *visual style implemented*
+- [X] A shuffle button is used to randomize the order of the cards
+- [ ] A user's answer may be counted as correct even when it is slightly different from the target answer
+- [ ] A counter displays the user's current and longest streak of correct responses
+- [ ] A user can mark a card that they have mastered and have it removed from the pool of answers as well as added to a list of mastered cards
 
 The following **additional** features are implemented:
 
-* [x] List anything else that you added to improve the site's functionality!
-      When hovering over the card or buttons, the cursor changes to pointer and the border color changes to dark green
-      The text flips when you click on the flashcard to look like the card is actually flipping.
+* [ ] List anything else that you added to improve the site's functionality!
 
 ## Video Walkthrough
 
-Here's a walkthrough of implemented required features:
+Here's a walkthrough of implemented user stories:
 
-<img src='https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExZDhhcWFtMW5rMHF5eXF0YnBhdTJkeGk1eG9ia3B5eTE4MXhmazNuNyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/VIkxEMJYSZNMFZAEDD/giphy.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+<img src='https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExMmo4Z3NraHh0OHFvazhkM21kMGd5czA1eXlxYWxkYWxyOHlzcjRrNCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/TusMHnQFYegNEz54gR/giphy.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
 <!-- Replace this with whatever GIF tool you used! -->
-GIF created with Kap
+GIF created with Kap  
 <!-- Recommended tools:
 [Kap](https://getkap.co/) for macOS
 [ScreenToGif](https://www.screentogif.com/) for Windows
@@ -44,13 +42,9 @@ GIF created with Kap
 ## Notes
 
 Describe any challenges encountered while building the app.
-I faced issues with transitions (flipping the text on click), inserting an image for the background, aligning the text in the card, 
-coding the next and previous buttons, making sure you see the question first when you switch to a different flashcard, coding the 
-random shuffle of the flashcards, and implementing the flipping of the card (using useState to tell when to show which side of the 
-card). For the transitions, aligning text, and inseting images, I had to play around with css. For the coding of the next and 
-previous buttons, making sure you see the question first when you switch to a different flashcard, coding the random shuffle of the
-flashcards, and implementing the flipping of the card, I had to look stuff up, refer to the lab, and ask chatgpt for any specific 
-errors.
+- Input as text. I did not know how to implement it, clear it if the left, right, or shuffle cards buttons were clicked, and compare it to the correct answer and change the border color depending on the correctness of the answers
+- Connecting the different jsx files. It was difficult to grasp how to pass information between the components and App.jsx
+- Keeping track of so the previous and next buttons would work as intended.
 
 ## License
 
@@ -67,13 +61,3 @@ errors.
     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
     See the License for the specific language governing permissions and
     limitations under the License.
-
-
-# React + Vite
-
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
-
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
