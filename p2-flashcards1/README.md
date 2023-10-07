@@ -30,8 +30,8 @@ The following **additional** features are implemented:
 
 Here's a walkthrough of implemented user stories:
 
-<img src='https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExMmo4Z3NraHh0OHFvazhkM21kMGd5czA1eXlxYWxkYWxyOHlzcjRrNCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/TusMHnQFYegNEz54gR/giphy.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
-![](https://github.com/VivanKwong/WebDev102/blob/master/p2-flashcards1/Kapture%202023-10-07%20at%2000.55.22.mp4)
+<img src='https://media.giphy.com/media/TusMHnQFYegNEz54gR/giphy.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+![](https://media.giphy.com/media/TusMHnQFYegNEz54gR/giphy.gif)
 <!-- Replace this with whatever GIF tool you used! -->
 GIF created with Kap  
 <!-- Recommended tools:
