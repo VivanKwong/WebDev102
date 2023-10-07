@@ -31,7 +31,7 @@ The following **additional** features are implemented:
 Here's a walkthrough of implemented user stories:
 
 <img src='https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExZTZ5ZXFieXNyMDU0ejVzb2hybDBiYjA2OW9tOTJkMHVjdTYxMWNkdiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/0In6n922W7DYnOj3Tw/giphy.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
-![](https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExZTZ5ZXFieXNyMDU0ejVzb2hybDBiYjA2OW9tOTJkMHVjdTYxMWNkdiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/0In6n922W7DYnOj3Tw/giphy.gif)
+![](giphy.gif)
 <!-- Replace this with whatever GIF tool you used! -->
 GIF created with Kap  
 <!-- Recommended tools:
