@@ -16,6 +16,8 @@ button {
   transition: border-color 0.25s;
   margin-left: 5px;
   margin-right: 5px;
+  margin-top: 5px;
+  margin-bottom: 5px;
 }
 button:hover {
   border-color: #458371;

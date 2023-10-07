@@ -1,6 +1,7 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import './App.css';
 import Card from './components/Card';
+import Insert from './Components/Insert';
 
 const App = () => {
   const cardSet = [
@@ -20,24 +21,38 @@ const App = () => {
   const [cardOrder, setCardOrder] = useState([]);
   const [showAnswer, setShowAnswer] = useState(false);
   const currentCard = cardSet[currentCardIndex];
+  const [isCorrect, setIsCorrect] = useState(null);
+  const [userGuess, setUserGuess] = useState("");
 
-  useEffect(() => {
-    const sortedCards = [...cardSet].sort(() => Math.random() - 0.5);
-    if (!cardOrder.every((card, index) => card.question === sortedCards[index].question)) {
-      setCardOrder(sortedCards);
-    }
-  }, [cardSet, cardOrder]);
+  const shuffleCards = () => {
+    const shuffledCards = [...cardSet].sort(() => Math.random() - 0.5);
+    setCardOrder(shuffledCards);
+    const randomIndex = Math.floor(Math.random() * shuffledCards.length);
+    setCurrentCardIndex(randomIndex);
+    setShowAnswer(false);
+    setIsCorrect(null)
+    setUserGuess("")
+  };
 
   const handlePrevCard = () => {
     setShowAnswer(false);
     const prevIndex = (currentCardIndex - 1 + cardSet.length) % cardSet.length;
     setCurrentCardIndex(prevIndex)
+    setIsCorrect(null)
+    setUserGuess("")
   };
 
   const handleNextCard = () => {
     setShowAnswer(false);
     const nextIndex = (currentCardIndex + 1) % cardSet.length;
     setCurrentCardIndex(nextIndex);
+    setIsCorrect(null)
+    setUserGuess("")
+  };
+
+  const onCheckAnswer = (userGuess) => {
+    const isCorrectGuess = userGuess.toLowerCase() === currentCard.answer.toLowerCase();
+    setIsCorrect(isCorrectGuess);
   };
 
   return (
@@ -45,9 +60,18 @@ const App = () => {
       <h1>Cat Facts</h1>
       <h2>/ᐠ - ˕ -マ Ⳋ Test your knowledge of everything cats here !</h2>
       <h3>Number of Cards: {cardSet.length}</h3>
-      <Card question={currentCard.question} answer={currentCard.answer}/>
+      <Card question={currentCard.question} answer={currentCard.answer} onCardClick={() => setShowAnswer(false)} disabled={showAnswer}/>
+      <Insert 
+        currentCard={currentCard} 
+        onCheckAnswer={onCheckAnswer} 
+        isCorrect={isCorrect}
+        showAnswer={showAnswer}
+        userGuess={userGuess}
+        setUserGuess={setUserGuess}
+      />
       <button onClick={handlePrevCard}>←</button>
       <button onClick={handleNextCard}>→</button>
+      <button onClick={shuffleCards}>Shuffle Cards</button>
     </div>
   )
 }
