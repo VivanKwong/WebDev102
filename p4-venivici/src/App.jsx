@@ -70,6 +70,9 @@ const App = () => {
 
   return (
     <div className="app">
+      <header>
+        <h1>Discover Art</h1>
+      </header>
       <div className="content">
         <div className="discover-container">
           {currentItem && <DiscoverItem item={currentItem} handleBan={handleBan} />}
