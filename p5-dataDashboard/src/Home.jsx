@@ -27,8 +27,8 @@ function Home({ list, searchedCityData, applyFilters }) {
         {list &&
             list.data &&
             Array.isArray(list.data) &&
-            list.data.map((weatherData, index) => (
-            <Link key={`${weatherData.city_name}_${weatherData.ts}_${index}`} to={`/detail-view/${weatherData.city_name}`}>
+            list.data.map((weatherData) => (
+            <Link key={`${weatherData.city_name}_${weatherData.ts}`} to={`/detail-view/${weatherData.city_name}`}>
                 {weatherData.city_name}
             </Link>
         ))}
@@ -37,29 +37,36 @@ function Home({ list, searchedCityData, applyFilters }) {
         {/* Display a line chart with temperature data */}
         {list && list.data && Array.isArray(list.data) && list.data.length > 0 && (
           <div>
-            <h3>Temperature Chart</h3>
-            <Line
-                ref={chartRef}
-                data={{
-                    labels: ['Label 1', 'Label 2', 'Label 3'],
-                    datasets: [
-                    {
-                        label: 'Temperature (°C)',
-                        data: [20, 25, 18],
-                        fill: false,
-                        borderColor: 'rgb(75, 192, 192)',
-                        tension: 0.1,
-                    },
-                    ],
-                }}
-                options={{
-                    scales: {
-                    x: {
-                        type: 'category',
-                    },
-                    },
-                }}
-            />
+            <h3>Weather Chart</h3>
+                <Line
+                    ref={chartRef}
+                    data={{
+                        labels: list?.data?.map((weatherData) => weatherData.ob_time) || [],
+                        datasets: [
+                        {
+                            label: 'Temperature (°C)',
+                            data: list?.data?.map((weatherData) => weatherData.temp) || [],
+                            fill: false,
+                            borderColor: 'rgb(75, 192, 192)',
+                            tension: 0.1,
+                        },
+                        {
+                            label: 'Wind Speed (m/s)',
+                            data: list?.data?.map((weatherData) => weatherData.wind_spd) || [],
+                            fill: false,
+                            borderColor: 'rgb(255, 99, 132)',
+                            tension: 0.1,
+                        },
+                        ],
+                    }}
+                    options={{
+                        scales: {
+                        x: {
+                            type: 'category',
+                        },
+                        },
+                    }}
+                />
           </div>
         )}
       </div>

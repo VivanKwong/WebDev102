@@ -112,19 +112,6 @@ function App() {
   return (
     <div className="whole-page">
       <h1>WeatherDash🌦</h1>
-      <nav>
-        <Link to="*">Home</Link>
-        {/* Modify links to use actual city names */}
-        {list &&
-          list.data &&
-          Array.isArray(list.data) &&
-          list.data.map((weatherData) => (
-            <Link key={weatherData.id} to={`/detail-view/${weatherData.city_name}`}>
-              {weatherData.city_name}
-            </Link>
-          ))}
-      </nav>
-
       <Routes>
         {/* Home route */}
         <Route
@@ -135,9 +122,9 @@ function App() {
         {list &&
           list.data &&
           Array.isArray(list.data) &&
-          list.data.map((weatherData, index) => (
+          list.data.map((weatherData) => (
             <Route
-              key={`${weatherData.city_name}_${weatherData.ts}_${index}`}
+              key={`${weatherData.city_name}_${weatherData.ts}`}
               path={`/detail-view/${weatherData.city_name}`}
               element={<DetailView data={weatherData} />}
             />
@@ -150,11 +137,42 @@ function App() {
           <p>Highest Temperature: {findHighestTemperature(list.data)}°C</p>
           <p>Lowest Temperature: {findLowestTemperature(list.data)}°C</p>
 
-          {/* Your existing code for search and filters... */}
+          <div>
+            <label htmlFor="searchCity">Search City: </label>
+            <input type="text" id="searchCity" value={searchCity} onChange={handleSearchChange} />
+            <button onClick={handleSearch}>Search</button>
+          </div>
+          <div>
+            <label htmlFor="minWindSpeed">Min Wind Speed (m/s): </label>
+            <input
+              type="number"
+              id="minWindSpeed"
+              name="minWindSpeed"
+              value={minWindSpeed}
+              onChange={handleFilterChange}
+            />
+          </div>
+          <div>
+            <label htmlFor="minTemperature">Min Temperature (°C): </label>
+            <input
+              type="number"
+              id="minTemperature"
+              name="minTemperature"
+              value={minTemperature}
+              onChange={handleFilterChange}
+            />
+          </div>
+          <button onClick={clearFilters}>Clear Filters</button>
 
           {searchedCityData ? (
             <ul>
-              {/* Your existing code for displaying searched city data... */}
+              <li key={searchedCityData.data[0].ts}>
+                <p>{searchedCityData.data[0].ob_time}</p>
+                <p>{searchedCityData.data[0].city_name}</p>
+                <p>{searchedCityData.data[0].temp}°C</p>
+                <p>{searchedCityData.data[0].wind_spd} m/s</p>
+                <p>{searchedCityData.data[0].weather.description}</p>
+              </li>
             </ul>
           ) : (
             <ul>
