@@ -1,6 +1,9 @@
 import { useState, useEffect } from 'react'
-import viteLogo from '/vite.svg'
+import { Route, Routes, Link } from 'react-router-dom';
 import './App.css'
+import Home from './Home'
+import DetailView from './DetailView';
+
 const API_KEY = import.meta.env.VITE_APP_API_KEY;
 
 function App() {
@@ -109,60 +112,63 @@ function App() {
   return (
     <div className="whole-page">
       <h1>WeatherDash🌦</h1>
+      <nav>
+        <Link to="*">Home</Link>
+        {/* Modify links to use actual city names */}
+        {list &&
+          list.data &&
+          Array.isArray(list.data) &&
+          list.data.map((weatherData) => (
+            <Link key={weatherData.id} to={`/detail-view/${weatherData.city_name}`}>
+              {weatherData.city_name}
+            </Link>
+          ))}
+      </nav>
+
+      <Routes>
+        {/* Home route */}
+        <Route
+          path="*"
+          element={<Home list={list} searchedCityData={searchedCityData} applyFilters={applyFilters} />}
+        />
+        {/* Detail view route */}
+        {list &&
+          list.data &&
+          Array.isArray(list.data) &&
+          list.data.map((weatherData, index) => (
+            <Route
+              key={`${weatherData.city_name}_${weatherData.ts}_${index}`}
+              path={`/detail-view/${weatherData.city_name}`}
+              element={<DetailView data={weatherData} />}
+            />
+          ))}
+      </Routes>
+
       {list && list.data && Array.isArray(list.data) && list.data.length > 0 ? (
         <div>
           <p>Average Temperature: {calculateAverageTemperature(list.data)}°C</p>
           <p>Highest Temperature: {findHighestTemperature(list.data)}°C</p>
           <p>Lowest Temperature: {findLowestTemperature(list.data)}°C</p>
-          <div>
-            <label htmlFor="searchCity">Search City: </label>
-            <input type="text" id="searchCity" value={searchCity} onChange={handleSearchChange} />
-            <button onClick={handleSearch}>Search</button>
-          </div>
-          <div>
-            <label htmlFor="minWindSpeed">Min Wind Speed (m/s): </label>
-            <input
-              type="number"
-              id="minWindSpeed"
-              name="minWindSpeed"
-              value={minWindSpeed}
-              onChange={handleFilterChange}
-            />
-          </div>
-          <div>
-            <label htmlFor="minTemperature">Min Temperature (°C): </label>
-            <input
-              type="number"
-              id="minTemperature"
-              name="minTemperature"
-              value={minTemperature}
-              onChange={handleFilterChange}
-            />
-          </div>
-          <button onClick={clearFilters}>Clear Filters</button>
+
+          {/* Your existing code for search and filters... */}
+
           {searchedCityData ? (
-          <ul>
-            <li key={searchedCityData.data[0].ts}>
-              <p>{searchedCityData.data[0].ob_time}</p>
-              <p>{searchedCityData.data[0].city_name}</p>
-              <p>{searchedCityData.data[0].temp}°C</p>
-              <p>{searchedCityData.data[0].wind_spd} m/s</p>
-              <p>{searchedCityData.data[0].weather.description}</p>
-            </li>
-          </ul>
-        ) : (
-          <ul>
-            {applyFilters(list.data).map((weatherData) => (
-              <li key={weatherData.ts}>
-                <p>{weatherData.ob_time}</p>
-                <p>{weatherData.city_name}</p>
-                <p>{weatherData.temp}°C</p>
-                <p>{weatherData.wind_spd} m/s</p>
-                <p>{weatherData.weather.description}</p>
-              </li>
-            ))}
-          </ul>
-        )}
+            <ul>
+              {/* Your existing code for displaying searched city data... */}
+            </ul>
+          ) : (
+            <ul>
+              {applyFilters(list.data).map((weatherData) => (
+                <li key={weatherData.ts}>
+                  <p>{weatherData.ob_time}</p>
+                  <p>{weatherData.city_name}</p>
+                  <p>{weatherData.temp}°C</p>
+                  <p>{weatherData.wind_spd} m/s</p>
+                  <p>{weatherData.weather.description}</p>
+                </li>
+              ))}
+            </ul>
+          )}
         </div>
       ) : (
         <p>Loading weather data...</p>
