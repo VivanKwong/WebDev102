@@ -4,7 +4,7 @@ Submitted by: Vivian Kwong
 
 This web app: Has data visualizations in the dashboard view and a detail view containing more info related to a given data point about weather.
 
-Time spent: 7 hours spent in total
+Time spent: 8 hours spent in total
 
 ## Required Features
 
@@ -30,7 +30,7 @@ The following **additional** features are implemented:
 
 Here's a walkthrough of implemented user stories:
 
-<img src='https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExemk4NmY0OHlibnN1cXh2d2M1bWdsMDkxbHh2dWN0eWEycXB0bTdkcyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/M5VMpK3WDsnhDZzFRQ/giphy.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+<img src='https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExeTNyZDNldnB5aDludm5ld21lcXlsYWQ0YXFreG9oZXdscHh5eWoyZCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/oH6xkMaCGPlrpBFGDs/giphy.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
 <!-- Replace this with whatever GIF tool you used! -->
 GIF created with Kap  
