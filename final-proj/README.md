@@ -13,7 +13,7 @@ The following **required** functionality is completed:
 - [X] **A create form that allows the user to create posts**
 - [X] **Posts have a title and optionally additional textual content and/or an image added as an external image URL**
 - [X] **A home feed displaying previously created posts**
-- [kinda] **By default, the time created, title, and number of upvotes for each post is shown on the feed**
+- [X] **By default, the time created, title, and number of upvotes for each post is shown on the feed** (MOSTLY)
 - [X] **Clicking on a post shall direct the user to a new page for the selected post**
 - [X] **Users can sort posts by either their created time or upvotes count**
 - [X] **Users can search for posts by title**
