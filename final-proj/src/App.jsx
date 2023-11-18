@@ -1,35 +1,63 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import './App.css';
+import { useState, useEffect } from 'react';
+import { useRoutes } from 'react-router-dom'
+import ReadPost from './pages/ReadPost'
+import CreatePost from './pages/CreatePost'
+import EditPost from './pages/EditPost'
+import PostDetail from './pages/PostDetail';
+import { Link } from 'react-router-dom'
+import { supabase } from './Client'
 
-function App() {
-  const [count, setCount] = useState(0)
 
-  return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+const App = () => {
+  const [posts, setPosts] = useState([]);
+
+  useEffect(() => {
+    // READ all post from table
+    const fetchPosts = async () => {
+      const {data} = await supabase
+        .from('Posts')
+        .select();
+
+      // set state of posts
+      setPosts(data)
+    }
+    fetchPosts();
+  }, []); 
+
+  // Sets up routes
+  let element = useRoutes([
+    {
+      path: "/",
+      element:<ReadPost data={posts}/>
+    },
+    {
+      path:"/edit/:id",
+      element: <EditPost />
+    },
+    {
+      path:"/new",
+      element: <CreatePost />
+    },
+    {
+      path:"/post/:id",
+      element: <PostDetail />
+    }
+  ]);
+
+  return ( 
+
+    <div className="App">
+
+      <div className="header">
+        <h1>Pride and Prejudice Forum</h1>
+        <Link to="/"><button className="headerBtn"> All Posts </button></Link>
+        <Link to="/new"><button className="headerBtn"> New Post </button></Link>
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+        {element}
+    </div>
+
+  );
 }
 
-export default App
+export default App;
