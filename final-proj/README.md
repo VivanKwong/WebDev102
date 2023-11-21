@@ -41,10 +41,10 @@ The following **additional** features are implemented:
 
 Here's a walkthrough of implemented user stories:
 
-<img src='https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExbnVzMWhvczJqNWs4OGZtdzU1M2RrdTl3Y3hqcmc0bWhpMHh2cGx3aCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/rFqChFYAMX5fdCY74w/giphy.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+<img src='https://www.loom.com/share/0d30383acf7d44bb8f388963cac39e7b?sid=7973d3cf-aa89-4455-9aef-4edbe5565271' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
 <!-- Replace this with whatever GIF tool you used! -->
-GIF created with Kap  
+GIF created with Loom  
 <!-- Recommended tools:
 [Kap](https://getkap.co/) for macOS
 [ScreenToGif](https://www.screentogif.com/) for Windows
