@@ -43,6 +43,8 @@ Here's a walkthrough of implemented user stories:
 
 <img src='<div style="position: relative; padding-bottom: 62.5%; height: 0;"><iframe src="https://www.loom.com/embed/0d30383acf7d44bb8f388963cac39e7b?sid=52ff3ddb-9b8b-49a0-9c24-0cc12ab28c6e" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe></div>' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
+<div style="position: relative; padding-bottom: 62.5%; height: 0;"><iframe src="https://www.loom.com/embed/0d30383acf7d44bb8f388963cac39e7b?sid=52ff3ddb-9b8b-49a0-9c24-0cc12ab28c6e" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe></div>
+
 <!-- Replace this with whatever GIF tool you used! -->
 GIF created with Loom  
 <!-- Recommended tools:
