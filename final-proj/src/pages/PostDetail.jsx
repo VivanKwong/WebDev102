@@ -75,7 +75,7 @@ const PostDetail = () => {
     if (confirmed) {
       await supabase.from('Posts').delete().eq('id', id); // Use id instead of postId
       // Navigate to the home page after deleting the post
-      navigate('/');
+      navigate('http://localhost:5173/');
     }
   };
 

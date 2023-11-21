@@ -48,13 +48,15 @@ const App = () => {
   return ( 
 
     <div className="App">
-
-      <div className="header">
-        <h1>Pride and Prejudice Forum</h1>
-        <Link to="/"><button className="headerBtn"> All Posts </button></Link>
-        <Link to="/new"><button className="headerBtn"> New Post </button></Link>
-      </div>
-        {element}
+        <div className="background-container">
+        <div className="content-container"></div>
+          <div className="header">
+            <h1>Pride and Prejudice Forum</h1>
+            <Link to="/"><button className="headerBtn"> All Posts </button></Link>
+            <Link to="/new"><button className="headerBtn"> New Post </button></Link>
+          </div>
+            {element}
+        </div>
     </div>
 
   );
